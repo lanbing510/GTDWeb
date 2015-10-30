@@ -20,7 +20,7 @@ Python2.7 + Django1.8.4
 ## 截图
 版块是按照明日-昨日-今日的顺序，提醒理想，回顾反省昨天，把握今天
 
-<img src="https://raw.githubusercontent.com/lanbing510/Michael/master/screenshots/Diray.png" width="100%" height="100%">
+<img src="https://raw.githubusercontent.com/lanbing510/GTDWeb/master/screenshots/Diray.png" width="100%" height="100%">
 
 ## 使用说明
 1 安装Python，将python.exe所在目录加入系统环境变量。
