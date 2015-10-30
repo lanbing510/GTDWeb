@@ -25,7 +25,7 @@ Python2.7 + Django1.8.4
 ## 使用说明
 1 安装Python，将python.exe所在目录加入系统环境变量。
 
-2 下载后建议放到D盘（即manage.py的路径为 D:/Michael/manage.py)，如放置其他位置，更改Michael/Micheal/setting.py中的路径即可。
+2 下载后建议放到D盘（即manage.py的路径为 D:/GTDWeb/manage.py)，如放置其他位置，更改Michael/Micheal/setting.py中的路径即可。
 
 3 运行runserver.bat后再浏览器中输入127.0.0.1:8000/diary/ 即可进行记录。建议设置runserver.bat为开机启动。
 
