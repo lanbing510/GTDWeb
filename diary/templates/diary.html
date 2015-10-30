@@ -1,0 +1,253 @@
+<html>
+<head>
+	<title> Diray </title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport", content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap-3.3.5-dist/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="/static/jquery-ui-1.11.4/smoothness/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/font-awesome-4.0.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/line-control/editor.css">
+	<link rel="stylesheet" type="text/css" href="/static/diary-css/diary.css">
+	<link rel="stylesheet" type="text/css" href="/static/glanceyear/glanceyear.css">
+
+	<script src="/static/jquery-1.11.3/jquery.min.js"> </script>
+	<script src="/static/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	<script src="/static/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+	<script src="/static/hotkeys/jquery.hotkeys.js"></script>
+	<script src="/static/line-control/editor.js"></script>
+	<script src="/static/diary-js/diary.js"></script>
+	<script src="/static/glanceyear/jquery.glanceyear.js"></script>
+
+
+</head>
+
+<body >
+
+<div style="display:none;" id="request_get_from"> {{request_get_from}} </div>
+<div style="display:none;" id="excepts">{{excepts}}</div>
+
+<!--form class="main-container container" action="/diary/" method="post"-->
+<div class="main-container container" >
+
+	<header class="diary-header container"> 
+		<h1 class="logo">晨间日记</h1>
+	</header>
+
+
+	<div class="information container" >
+		<input type="text" id="date" style="float: left; margin-left:-1.7%; border:none; "><div style="display:none" id="date_show">{{date}}</div>
+		<span style="float: left; margin-left:-1.7%;" id="weekday" >{{weekday}}</span> 
+		<span style="float: left; margin-left:50%;">累积成长</span>
+		<span id="total_days" style="float:left; margin-left:5%; text-align:left;"> {{total_days}} </span>
+		<span style="float: right; margin-right:-1.6%;">天</span>
+	</div>
+
+
+	<div  class="diary container ">
+
+		<div class="center">
+			<div   class="title-bar" style="margin-bottom:0px"> 
+				A 如果有梦|梦要够疯
+			</div>
+
+		<div class="center">
+			<div   class="smalltitle-bar"> 
+				年计划
+				<div class="toggle-button" style="margin-top:-20px;">
+				<button id="toggle0" type="botton" class="btn btn-default dropdown" > <span class="caret"></span></button>
+				</div>
+			</div>
+			<div class="editor-idx"> 0 </div>
+			<textarea  id="txtEditor0" class="ceditor"> {{editor0}} </textarea>
+		</div>
+
+		<div class="center" style="margin-top:-30px;">
+			<div   class="smalltitle-bar"> 
+				月计划
+				<div class="toggle-button" style="margin-top:-20px;">
+				<button id="toggle1" type="botton" class="btn btn-default dropdown" > <span class="caret"></span></button>
+				</div>
+			</div>
+			<div class="editor-idx"> 1 </div>
+			<textarea  id="txtEditor1" class="ceditor"> {{editor1}} </textarea>
+		</div>
+
+		<div class="center" style="margin-top:-30px;">
+			<div   class="smalltitle-bar"> 
+				周计划
+				<div class="toggle-button" style="margin-top:-20px;">
+				<button id="toggle2" type="botton" class="btn btn-default dropdown" > <span class="caret"></span></button>
+				</div>
+			</div>
+			<div class="editor-idx"> 2 </div>
+			<textarea  id="txtEditor2" class="ceditor"> {{editor2}} </textarea>
+		</div>
+
+		</div>
+
+
+		<div class="center">
+			<div   class="title-bar"> 
+				B 昨日成功日记|惊喜|美好|创意|成迹	
+				<div class="toggle-button">
+					<button id="toggle3" type="botton" class="btn btn-default dropdown" > <span class="caret"></span></button>
+				</div>
+			</div>
+			<div class="editor-idx"> 3 </div>
+			<textarea  id="txtEditor3" class="ceditor"> {{editor3}} </textarea>
+		</div>
+
+
+		<div class="center">
+			<div   class="title-bar"> 
+				C 昨日工作|学习|阅读		
+				<div class="toggle-button">
+					<button id="toggle4" type="botton" class="btn btn-default dropdown" > <span class="caret"></span></button>
+				</div>
+			</div>
+			<div class="editor-idx"> 4 </div>
+			<textarea  id="txtEditor4" class="ceditor"> {{editor4}} </textarea>
+		</div>
+
+
+		<div class="center">
+			<div   class="title-bar"> 
+				D 昨日睡眠|运动|饮食 	
+				<div class="toggle-button">
+					<button id="toggle5" type="botton" class="btn btn-default dropdown" > <span class="caret"></span></button>
+				</div>
+			</div>
+			<div class="editor-idx"> 5 </div>
+			<textarea  id="txtEditor5" class="ceditor"> {{editor5}} </textarea>
+		</div>
+
+
+		<div class="center">
+			<div   class="title-bar"> 
+				E 昨日人脉|感情|关系		
+				<div class="toggle-button">
+					<button id="toggle6" type="botton" class="btn btn-default dropdown" > <span class="caret"></span></button>
+				</div>
+			</div>
+			<div class="editor-idx"> 6 </div>
+			<textarea  id="txtEditor6" class="ceditor"> {{editor6}} </textarea>
+		</div>
+
+		<div class="center">
+			<div   class="title-bar"> 
+				F 其他|感悟|反省	
+				<div class="toggle-button">
+					<button id="toggle7" type="botton" class="btn btn-default dropdown" > <span class="caret"></span></button>
+				</div>
+			</div>
+			<div class="editor-idx"> 7 </div>
+			<textarea  id="txtEditor7" class="ceditor"> {{editor7}} </textarea>
+		</div>
+
+
+		<div class="center">
+			<div  class="title-bar"> 
+				G 脚踏实地		
+				<div class="toggle-button">
+					<button id="toggle8" type="botton" class="btn btn-default dropdown" > <span class="caret"></span></button>
+				</div>
+			</div>
+			<div class="editor-idx"> 8 </div>
+			<textarea  id="txtEditor8" class="ceditor"> {{editor8}} </textarea>
+		</div>
+	</div>
+
+
+	<div class="show-bar container" >
+		<span>总</span>
+		<div class="count" id="t_count">{{total_days}}</div> <div class="count" id="total_count">{{total_count}}</div>
+		<svg height="40" width="40" id="t_svg">
+			<circle id="t_svg_circle" cx="20" cy="20" r="20" fill="rgba(0,0,0,0.12)" />
+			<path id="t_svg_path0" d="" fill=""></path>
+			<path id="t_svg_path1" d="" fill=""></path>
+		</svg>
+		<span>年</span>
+		<div class="count" id="y_count">{{y_count}}</div>
+		<svg height="40" width="40" id="y_svg">
+			<circle id="y_svg_circle" cx="20" cy="20" r="20" fill="rgba(0,0,0,0.12)" />
+			<path id="y_svg_path0" d="" fill=""></path>
+			<path id="y_svg_path1" d="" fill=""></path>
+		</svg>
+
+		<span>月</span>
+		<div class="count" id="m_count">{{m_count}}</div>
+		<svg height="40" width="40" id="m_svg">
+			<circle id="m_svg_circle" cx="20" cy="20" r="20" fill="rgba(0,0,0,0.12)" />
+			<path id="m_svg_path0" d="" fill=""></path>
+			<path id="m_svg_path1" d="" fill=""></path>
+		</svg>
+
+		<span>周</span>
+		<div class="count" id="w_count">{{w_count}}</div>
+		<svg height="40" width="40" id="w_svg">
+			<circle id="w_svg_circle" cx="20" cy="20" r="20" fill="rgba(0,0,0,0.12)" />
+			<path id="w_svg_path0" d="" fill=""></path>
+			<path id="w_svg_path1" d="" fill=""></path>
+		</svg>
+
+		<button type="button" class="btn btn-default" id="submit"><a href="javascript:void(0)">提交</a></button>
+		<button type="button" class="btn btn-default" id="modify"><a href="javascript:void(0)">修改</a></button>
+
+	</div>
+
+
+	<div class="toggle-button" >
+		<button id="toggle_glanceyear" type="botton" class="btn btn-default dropdown" > <span class="caret"></span></button>
+	</div>
+
+	<div class="glanceyear container" id="glanceyear">
+		<div class="glanceyear-content"  id="js-glanceyear"></div>
+		<div class="count" id="recorded_dates">{{recorded_dates}}</div>
+	</div>
+
+
+
+
+
+	<!-- -->
+
+	<!--input type="text" id="date">
+	<ul class="pagination">
+		<li><a href="#">&laquo;</a></li>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">&raquo;</a></li>
+	</ul-->
+
+
+
+	<footer class="footer container" role="footer">
+		<div class="copyright">
+			©
+			<a href="">冰蓝</a>
+		</div>
+
+		<ul class="fonter-nav">
+			<li class="nav-item">
+				<a href="">帮助中心</a>
+			</li>
+			<li class="nav-item">
+				<a href="">服务条款</a>
+			</li>
+		</ul>
+
+	</footer>
+
+<!--/form-->
+</div>
+
+
+
+</body>
+</html>
