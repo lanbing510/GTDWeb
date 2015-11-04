@@ -149,6 +149,16 @@
 	       	}
 		}
 
+		// Count today is the ?th day 
+		var countDays = function (date) {
+    		date = date.split('/'); 
+    		var year  = parseInt(date[0], 10);
+    		date = (new Date(date)).getTime();
+    		var initial = (new Date(year + '-1-1')).getTime();
+    		var offset = date - initial;
+    		return Math.floor(offset / 24 / 3600 / 1e3) + 1;
+    	};
+
 		// Editor content
 	    if($("#request_get_from").text()=="" || $("#request_get_from").text()==0){
 	    	modify_status=false;
@@ -160,7 +170,7 @@
 			var w=today.getDay();  
 			var d=today.getDate();
 
-			if(w==1){ // new week
+			if(w==1||w<=$("#w_count").html()){ // new week
 				if($("#excepts").text()=="1"){
 					$("#w_count").html("0")
 				}
@@ -177,7 +187,7 @@
 				adjustEditorHeight(txtEditors[2]);
 	    		$(txtEditors[2]).parent().children("div.Editor-container").children("div.Editor-editor").attr("contenteditable",false);
 			}
-			if(d==1){ // New Month
+			if(d==1||d<=$("#m_count").html()){ // New Month
 				if($("#excepts").text()=="1"){
 					$("#m_count").html("0")
 				}
@@ -194,7 +204,7 @@
 				adjustEditorHeight(txtEditors[1]);
 	    		$(txtEditors[1]).parent().children("div.Editor-container").children("div.Editor-editor").attr("contenteditable",false);
 			}
-			if(m==1 && d==1){ // New year
+			if((m==1 && d==1)||countDays(today.toLocaleDateString())<=$("#y_count").html()){ // New year
 				if($("#excepts").text()=="1"){
 					$("#y_count").html("0")
 				}
