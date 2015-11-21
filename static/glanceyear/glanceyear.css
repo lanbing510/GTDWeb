@@ -31,7 +31,7 @@ body { font-family: Arial, serif; }
 	margin: 0 0;
 	padding: 0;
 }
-.glanceyear-summary { color: #aaa; font-size: 12px; margin: 0 10px 10px; }
+.glanceyear-summary { color: #aaa; font-size: 12px; margin: 0 0px 0px; border: 1px solid; border-top:0px;  }
 
 .glanceyear-legend {
 	color: #aaa;
@@ -44,11 +44,12 @@ body { font-family: Arial, serif; }
 
 svg rect.day { fill: #eee; shape-rendering: crispedges; }
 svg rect.day:hover { stroke: #aaa; stroke-width: 1px; }
-svg rect.day[data-count] { fill: #3d9692; }
-svg rect.day[data-count='1'] { fill: #EBA7A7; }
-svg rect.day[data-count='2'] { fill: #5caeaa; }
-svg rect.day[data-count='3'] { fill: #277672; }
-svg rect.day[data-count='4'] { fill: #c3dbda; }
+svg rect.day[data-count='0'] { fill: #EEEEEE; }
+svg rect.day[data-count='1'] { fill: #D6E685; }
+svg rect.day[data-count='2'] { fill: #8CC665; }
+svg rect.day[data-count='3'] { fill: #44A340; }
+svg rect.day[data-count='4'] { fill: #1E6823; }
+svg rect.day[data-count='5'] { fill: #021E02; }
 
 svg text { fill: #CCC; font-size: 9px; }
 svg text.month { fill: #AAA; }

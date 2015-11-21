@@ -10,6 +10,7 @@ class HabitAdmin(admin.ModelAdmin):
 	list_filter=('id',)
 	ordering=('-id',)
 
+
 class HabitRecordsAdmin(admin.ModelAdmin):
 	list_display=('date','weekday','total_days',)
 	list_filter=('date',)
