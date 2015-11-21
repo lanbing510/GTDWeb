@@ -17,8 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 import diary.views
+import habit.views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^diary/$',diary.views.diary,name='diary'),
+    url(r'^habit/$',habit.views.habit,name='habit'),
 ]

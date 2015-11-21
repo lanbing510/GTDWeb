@@ -1,0 +1,164 @@
+body{
+	font: normal 100%;
+}
+
+.main-container{
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.center{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+
+.habit-header{
+	height: 3.6em;
+	font-size: 0.9em;
+	box-shadow: 0pt 1px 0pt rgb(255,255,255);
+	border-bottom: 1px solid rgb(221,221,221);
+	margin-bottom:20px;
+}
+
+.logo{
+	font-size: 2.0em;
+	line-height: 1.6em;
+	font-weight: 700;
+	margin-left: -1.5%;
+}
+
+header h1{
+	margin-top:10px;
+}
+
+.container{
+	width: auto;
+	max-width: 960px;
+}
+
+.information{
+	font-size: 1.32em;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+
+.record{
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+.title-bar
+{
+	border: 1px solid #cccccc;
+	/*margin-bottom:-10px; */
+	height:30px; 
+	font-weight:500; 
+	font-size:1.40em; 
+	/*color:red; */
+	text-align:center;
+}
+
+.title-checkbox
+{
+	text-align:right; 
+	position:relative; 
+	left:10px; 
+	margin-top:-26px;
+}
+
+
+.show-bar{
+	margin-bottom: 50px;
+}
+
+.show-bar > span{
+	font-size: 1.32em;
+	vertical-align:40%;
+	position: relative;
+	left: -1.8%;
+}
+
+.show-bar > svg{
+	position: relative;
+	left: -1.8%;
+}
+
+.show-bar > button{
+	vertical-align: 86%;
+	float: right;
+	margin-right: -1.6%;
+	font-size: 1.32em;
+	left: 71%;
+	width: 90px;
+	height: 40px;
+}
+
+.glanceyear{
+	border: 1px solid #cccccc;
+}
+
+.addremove{
+	margin-bottom:20px; 
+	margin-top:10px 
+}
+
+.addremove > input{
+	font-size: 1.32em;
+	height: 33px;
+	width: 50%;
+}
+
+.addremove > button
+{
+	font-size:1.32em;
+	height:33px;
+	float: right;
+	margin-left: 10px;
+}
+
+.footer{
+	text-align: center;
+	border-top: 1px solid rgb(238,238,238);
+	padding: 1em 0pt;
+	font-size: 1.17em;
+	color: rgb(154,158,168);
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+
+.footer div{
+	float: left;
+}
+
+
+.footer div a{
+	color:rgb(102, 102, 102)
+}
+
+.footer .footer-nav{
+	float:none;
+	margin: 1em 0pt 1pt;
+	width: 100%;
+}
+
+.footer ul{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+}
+
+.footer ul li{
+	float: right;
+	margin-left: 1.5%;
+}
+
+.footer a{
+	color:rgb(102, 102, 102)
+}
+
+.count{
+	display: none;
+}
