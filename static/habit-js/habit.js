@@ -79,6 +79,11 @@
 			var m=today.getMonth()+1;
 			var w=today.getDay();  
 			var d=today.getDate();
+
+			if(w==0){
+				w=7;
+			}
+			
 			if(w==1||w<=$("#w_count").html()){ // new week
 				if($("#excepts").text()=="1"){
 					$("#w_count").html("0")
