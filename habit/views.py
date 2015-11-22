@@ -61,7 +61,6 @@ def habit(request):
 			d.save()
 			
 			if  d.habits.all() and len(d.habits.all())!=len(hbdic.keys()):
-				print "ddddddddddddddddddddd"
 				total_days=str(int(request.POST['total_days']))
 				y_count=str(int(request.POST['y_count']))
 				m_count=str(int(request.POST['m_count']))
@@ -116,11 +115,9 @@ def habit(request):
 			total_count=getTotalCount(date)
 
 			recorded_dates=getRecordedDates(habits)
-			print recorded_dates
 			return  render_to_response('habit.html',{'request_get_from':1,'date':date,'weekday':weekday,'total_days':total_days,\
 				'habits':habits,'y_count':y_count,'m_count':m_count,'w_count':w_count,'total_count':total_count,'recorded_dates':recorded_dates})
 		else:
-			print "request_get_from",request_get_from
 			addremove_flag=request_get_from
 			request_get_from=0
 			today=getToday()
@@ -169,7 +166,6 @@ def habit(request):
 					habit_id=Habit.objects.get(name=habit_name).id
 					habits_temp=[]
 					for hb in habits:
-						print hb.id,habit_id
 						if hb.id!=habit_id:
 							habits_temp.append(hb)
 					habits=habits_temp
@@ -217,7 +213,6 @@ def getHistoryHabitRecord(dt):
 
 		habits_string=dy.habits_string
 		hbdic=getHabitsDict(habits_string)
-		print hbdic
 
 		for hb in dy.habits.all():
 			date_string=""
@@ -227,7 +222,6 @@ def getHistoryHabitRecord(dt):
 			value=getValue(hbdic,hb.id)
 			habits.append(HabitStructure(hb.id,hb.name,value,date_string))
 
-		print "1",len(habits)
 		y_count=dy.y_count
 		m_count=dy.m_count
 		w_count=dy.w_count
@@ -319,7 +313,6 @@ def getRecordedDates(habits):
 				dic[hbs[0]]=int(hbs[1])
 	for d in dic.keys():
 		recorded_dates=recorded_dates+d+":"+str(dic[d])+" "
-	print recorded_dates
 	return recorded_dates
 
 
