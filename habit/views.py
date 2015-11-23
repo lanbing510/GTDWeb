@@ -125,7 +125,7 @@ def habit(request):
 			weekday=weekday_array[datetime.date.today().weekday()]
 			if excepts==1:
 				(date,total_days,habits,y_count,m_count,w_count,excepts)=getLastDirayRecord()
-				excepts=2
+				excepts+=1
 				if date!="":
 					dt=date.encode('UTF-8')
 					last_day=datetime.date(int(dt[0:4]),int(dt[7:9]),int(dt[12:14]))
