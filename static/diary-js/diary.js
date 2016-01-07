@@ -7,6 +7,9 @@
 		var toggles=new Array("#toggle0","#toggle1","#toggle2","#toggle3","#toggle4","#toggle5","#toggle6","#toggle7","#toggle8");
 		var firstFocus=new Array(true,true,true,true,true,true,true,true,true);
 
+		var svgs=new Array("#t_svg","#y_svg","#m_svg","#w_svg");
+		var svg_counts=new Array("#t_count","#y_count","#m_count","#w_count");
+
 		// -----------------------------------------------For date-----------------------------------------
 		$("#date").val($("#date_show").text())
 
@@ -420,9 +423,49 @@
 		});
 
 
-		$("#w_svg").mouseover(function(){
-			//TODO
-		});
+
+		// Function For Showing The Count When Mouse Move Over The SVGs
+		function createElementSvg(type, prop ) {
+			var e = document.createElementNS('http://www.w3.org/2000/svg', type);
+			for (var p in prop) {
+				e.setAttribute(p, prop[p]);
+			}
+			return e;
+		}
+
+		for(var i=0;i<svgs.length;i++)
+		{
+			var circleElement = createElementSvg('circle', {
+				'id':'mouseover_on_c',
+				'cx':"20",
+				'cy':"20",
+				'r':"15",
+				'fill':"rgba(255,255,255,1)",       
+			});
+			var text = createElementSvg('text', {
+				'id':'mouseover_on_t',
+				'x':'20', 
+				'y':'25', 
+				'style':'font-size:14; fill:#000000; font-family:Times New Roman; text-anchor:middle;'
+			});
+
+			$(svgs[i]).attr('count',$(svg_counts[i]).text());
+
+			$(svgs[i]).mouseover(function(){
+				if($("#mouseover_on_c").length==0){
+					$(this).append(circleElement);
+					text.textContent = $(this).attr('count')
+					$(this).append(text);
+				}
+			});
+
+			$(svgs[i]).mouseleave(function(){
+				if($("#mouseover_on_c").length>0){
+					$("#mouseover_on_c").remove();
+					$("#mouseover_on_t").remove();
+				}
+			});
+		}
 
 
 		// -------------------------------------------For glanceyear----------------------------------
