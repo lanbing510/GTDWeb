@@ -101,19 +101,19 @@ def diary(request):
 					dt=date.encode('UTF-8')
 					last_day=datetime.date(int(dt[0:4]),int(dt[7:9]),int(dt[12:14]))
 					diff_days=(datetime.date.today()-last_day).days
-					if diff_days>365:
+					if diff_days>=365:
 						eidtor0=""
 						editor1=""
 						editor2=""
 						y_count=0
 						m_count=0
 						w_count=0
-					elif diff_days>30:
+					elif diff_days>=28:
 						editor1=""
 						editor2=""
 						m_count=0
 						w_count=0
-					elif diff_days>7:
+					elif diff_days>=7:
 						editor2=""
 						w_count=0
 					else:
