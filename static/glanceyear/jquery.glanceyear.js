@@ -15,9 +15,10 @@
 			weeks: ['M','T','W','T','F','S', 'S'],
 			targetQuantity: '.glanceyear-quantity',
 			tagId: 'glanceyear-svgTag',
-			showToday: false,
+			showTodayFlag: true,
 			today: new Date()
 		}, options );
+
 
 		var svgElement = createElementSvg('svg', {'width': 54*16+15, 'height': 7*16+15 } );
 
@@ -50,6 +51,7 @@
 				rectDate.setMonth(settings.today.getMonth());
 				rectDate.setFullYear(settings.today.getFullYear());
 				rectDate.setDate(settings.today.getDate() - dayCount);
+
 				
 				if ( rectDate.getMonth() != monthCount && i < 52 && j > 3 && daysLeft > 7) {
 					//new Month
@@ -60,7 +62,8 @@
 				}
 
 				dayCount--;
-				if (dayCount>=0 || (settings.showToday && dayCount>=-1)) {
+				
+				if (dayCount>=0 || (settings.showTodayFlag && dayCount>=-1)) {
 					// Day-obj factory
 
 					var rectElement = createElementSvg('rect', {
