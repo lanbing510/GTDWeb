@@ -469,8 +469,8 @@
 
 
 		// -------------------------------------------For glanceyear----------------------------------
-		$("#glanceyear").hide()
-		var glanceyear_show=false
+		$("#glanceyear").show()
+		var glanceyear_show=true
 		$("#toggle_glanceyear").click(function(){
 			if(glanceyear_show){
 				$("#glanceyear").hide()
