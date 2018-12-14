@@ -43,15 +43,15 @@ def diary(request):
 			date=request.POST['date']
 			weekday=request.POST['weekday']
 			total_days=str(int(request.POST['total_days'])+1)
-			editor0=request.POST['eidtor0']
-			editor1=request.POST['eidtor1']
-			editor2=request.POST['eidtor2']
-			editor3=request.POST['eidtor3']
-			editor4=request.POST['eidtor4']
-			editor5=request.POST['eidtor5']
-			editor6=request.POST['eidtor6']
-			editor7=request.POST['eidtor7']
-			editor8=request.POST['eidtor8']
+			editor0=request.POST['eidtor0'].strip()
+			editor1=request.POST['eidtor1'].strip()
+			editor2=request.POST['eidtor2'].strip()
+			editor3=request.POST['eidtor3'].strip()
+			editor4=request.POST['eidtor4'].strip()
+			editor5=request.POST['eidtor5'].strip()
+			editor6=request.POST['eidtor6'].strip()
+			editor7=request.POST['eidtor7'].strip()
+			editor8=request.POST['eidtor8'].strip()
 			y_count=str(int(request.POST['y_count'])+1)
 			m_count=str(int(request.POST['m_count'])+1)
 			w_count=str(int(request.POST['w_count'])+1)
@@ -180,9 +180,9 @@ def getLastDirayRecord():
 		dy=Diary.objects.order_by("-date")[0]
 		date=dy.date
 		total_days=dy.total_days
-		editor0=dy.editor0
-		editor1=dy.editor1
-		editor2=dy.editor2
+		editor0=dy.editor0.strip()
+		editor1=dy.editor1.strip()
+		editor2=dy.editor2.strip()
 		y_count=dy.y_count
 		m_count=dy.m_count
 		w_count=dy.w_count
@@ -194,7 +194,7 @@ def getTotalCount(ld):
 	try:
 		dy=Diary.objects.order_by("date")[0]
 		dt=dy.date.encode('UTF-8')
-		first_day=datetime.date(int(dt[0:4]),int(dt[7:9]),int(dt[12:14]))
+		first_day=datetime.date(int(dt[0:4]),int(dt[7:9]),int(dt[12:14]))#2015年09月06日
 		ld=ld.encode('UTF-8')
 		last_day=datetime.date(int(ld[0:4]),int(ld[7:9]),int(ld[12:14]))
 		total_count=(last_day-first_day).days
